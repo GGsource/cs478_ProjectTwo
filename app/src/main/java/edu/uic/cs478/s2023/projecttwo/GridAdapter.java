@@ -33,6 +33,7 @@ public class GridAdapter extends ArrayAdapter<CardModel> {
         tv.setText(cardModel.getTitle());
         iv.setImageResource(cardModel.getImageIndex());
 
+
         return listItemView;
     }
 }
