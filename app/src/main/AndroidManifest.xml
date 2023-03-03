@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--|~~~~~~~~~~~~~~~~~~Project Two: Grids of Cars~~~~~~~~~~~~~~~~~~|
-Name: Geovani Gonzalez
-Course: CS 478 Spring 2023
-NetID: ggonza55@uic.edu | UIN: 657437605
-Start Date: March 1st, 2023 @ 6:40 PM
-Completion Date: TODO: Determine Completion Date
-|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|-->
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -20,6 +11,9 @@ Completion Date: TODO: Determine Completion Date
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectTwo"
         tools:targetApi="31">
+        <activity
+            android:name=".BigImageActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CS478: ProjectTwo</string>
+    <string name="textview">TextView</string>
 </resources>
