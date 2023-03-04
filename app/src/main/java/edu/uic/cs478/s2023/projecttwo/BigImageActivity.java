@@ -13,15 +13,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class BigImageActivity extends AppCompatActivity {
-
-    int[] imgList = {R.drawable.kona_n_hd, R.drawable.charger_hd,
-                    R.drawable.mg5_hd, R.drawable.spectre_hd,
-                    R.drawable.civic_type_r_hd, R.drawable.sierra_hd,
-                    R.drawable.mustang_hd,R.drawable.porsche_hd,};
-    int[] sites = {R.string.site_0, R.string.site_1, R.string.site_2
-                ,R.string.site_3, R.string.site_4, R.string.site_5
-                ,R.string.site_6,R.string.site_7,R.string.site_8};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,13 +33,13 @@ public class BigImageActivity extends AppCompatActivity {
         ImageView bigImg = findViewById(R.id.bigImage);
         TextView bigTxt = (TextView) findViewById(R.id.bigText);
 
-        bigImg.setImageResource(imgList[index]);
+        bigImg.setImageResource(Data.imgList[index]);
         bigTxt.setText(title);
         bigImg.setOnClickListener(view -> {
-            Toast.makeText(BigImageActivity.this, "Website for this item is: " + getResources().getString(sites[index]), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(BigImageActivity.this, "Website for this item is: " + getResources().getString(sites[index]), Toast.LENGTH_SHORT).show();
 //            DONE: open site in browser
             Intent browseIntent = new Intent(Intent.ACTION_VIEW);
-            browseIntent.setData(Uri.parse(getResources().getString(sites[index])));
+            browseIntent.setData(Uri.parse(getResources().getString(Data.sites[index])));
             startActivity(browseIntent);
         });
     }

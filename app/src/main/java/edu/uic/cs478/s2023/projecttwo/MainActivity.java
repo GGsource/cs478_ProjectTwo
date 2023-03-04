@@ -1,14 +1,19 @@
 package edu.uic.cs478.s2023.projecttwo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -50,7 +55,38 @@ public class MainActivity extends AppCompatActivity {
 
         gridView.setOnItemLongClickListener((adapterView, view, i, l) -> {
 //                TODO: Implement long click
+
             return false;
         });
+        registerForContextMenu(gridView);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.long_click_menu, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        View clickedView = gridView.getChildAt(info.position);
+            switch(item.getItemId()) {
+            case R.id.showCarItem:
+//                TextView tv = (TextView) clickedView.findViewById(R.id.txtView);
+//                Toast.makeText(MainActivity.this, "You clicked: " + tv.getText().toString(), Toast.LENGTH_LONG).show();
+                gridView.performItemClick(clickedView, info.position, clickedView.getId());
+                break;
+
+            case R.id.showSiteItem:
+                Intent browseIntent = new Intent(Intent.ACTION_VIEW);
+                browseIntent.setData(Uri.parse(getResources().getString(Data.sites[info.position])));
+                startActivity(browseIntent);
+                break;
+            case R.id.showSellerItem:
+                break;
+        }
+
+        return super.onContextItemSelected(item);
     }
 }

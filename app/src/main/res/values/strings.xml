@@ -10,4 +10,7 @@
     <string name="site_6">https://www.ford.com/cars/mustang/models/gt-fastback/</string>
     <string name="site_7">https://www.volkswagenag.com/en/group/brands-and-models/porsche.html</string>
     <string name="site_8">https://www.coolmathgames.com</string>
+    <string name="show_car">Show Car</string>
+    <string name="show_website">Show Website</string>
+    <string name="show_sellers">Show Sellers</string>
 </resources>
