@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">CS478: ProjectTwo</string>
     <string name="textview">TextView</string>
+    <string name="site_0">https://www.hyundaiusa.com/us/en/vehicles/kona-n</string>
+    <string name="site_1">https://www.dodge.com/charger.html</string>
+    <string name="site_2">https://www.saicmotor.com/english/products/photos/index.shtml</string>
+    <string name="site_3">https://www.rolls-roycemotorcars.com/en_US/showroom/spectre.html</string>
+    <string name="site_4">https://automobiles.honda.com/civic-type-r</string>
+    <string name="site_5">https://www.gmc.com/trucks/previous-year/sierra/2500hd-3500hd/denali</string>
+    <string name="site_6">https://www.ford.com/cars/mustang/models/gt-fastback/</string>
+    <string name="site_7">https://www.volkswagenag.com/en/group/brands-and-models/porsche.html</string>
+    <string name="site_8">https://www.coolmathgames.com</string>
 </resources>
