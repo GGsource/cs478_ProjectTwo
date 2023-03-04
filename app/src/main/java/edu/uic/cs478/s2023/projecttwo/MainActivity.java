@@ -3,6 +3,7 @@ package edu.uic.cs478.s2023.projecttwo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,7 +14,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -44,19 +44,13 @@ public class MainActivity extends AppCompatActivity {
 
         gridView.setOnItemClickListener((adapterView, view, i, l) -> {
 //                DONE: Implement short Click
-            TextView tv = (TextView) view.findViewById(R.id.txtView);
+            TextView tv = view.findViewById(R.id.txtView);
             Intent bigIntent = new Intent(MainActivity.this, BigImageActivity.class);
             bigIntent.putExtra("carIndex", i);
             bigIntent.putExtra("carName", tv.getText().toString());
             startActivity(bigIntent);
 
             Log.d("ClickedGridItem", "text: "+tv.getText().toString() + " i: " + i + " l: " + l  );
-        });
-
-        gridView.setOnItemLongClickListener((adapterView, view, i, l) -> {
-//                TODO: Implement long click
-
-            return false;
         });
         registerForContextMenu(gridView);
     }
@@ -67,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.long_click_menu, menu);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
