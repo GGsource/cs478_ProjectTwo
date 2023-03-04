@@ -84,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(browseIntent);
                 break;
             case R.id.showSellerItem:
+                Intent listIntent = new Intent(MainActivity.this, SellerListActivity.class);
+                listIntent.putExtra("carIndex", info.position);
+                startActivity(listIntent);
                 break;
         }
 

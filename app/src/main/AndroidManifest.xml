@@ -12,6 +12,9 @@
         android:theme="@style/Theme.ProjectTwo"
         tools:targetApi="31">
         <activity
+            android:name=".SellerListActivity"
+            android:exported="false" />
+        <activity
             android:name=".BigImageActivity"
             android:exported="false" />
         <activity
